@@ -3,144 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Office Mobile Signal Checklist | UCtel</title>
-    <meta
-      name="description"
-      content="Get UCtel's office mobile signal checklist. Enter your email to unlock the PDF and spot the issues causing missed calls, patchy coverage, and frustrated teams."
-    />
-    <meta name="theme-color" content="#E18545" />
-    <meta property="og:title" content="Office Mobile Signal Checklist | UCtel" />
-    <meta
-      property="og:description"
-      content="A practical PDF checklist for finding the office signal issues hurting calls, coverage, and client experience."
-    />
+    <title>What's Blocking Mobile Signal in Your Office? | UCtel</title>
+    <meta name="description" content="Find out exactly what's blocking mobile signal in your office. Get the free UCtel checklist — spot the cause in minutes, no engineer needed." />
+    <meta name="theme-color" content="#1D889A" />
+    <meta property="og:title" content="What's Blocking Mobile Signal in Your Office? | UCtel" />
+    <meta property="og:description" content="Free checklist from UCtel — find out what's causing dropped calls, dead spots, and patchy office coverage in minutes." />
     <meta property="og:type" content="website" />
     <link rel="preload" href="./uctel_logo.png" as="image" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="page-shell">
+    <header class="site-header">
+      <img src="./uctel_logo.png" alt="UCtel" class="site-logo" />
+    </header>
+    <main>
       <section class="hero-section">
-        <div class="hero-copy">
+        <div class="page-wrap">
           <div class="eyebrow-badge">
             <span class="eyebrow-dot"></span>
             Trusted by 200+ UK businesses
           </div>
 
-          <h1>Find Out What Is Blocking Mobile Signal In Your Office</h1>
-          <p class="hero-text">
-            Get the free office signal checklist from UCtel and see the most common reasons calls drop, coverage disappears, and staff end up hunting for signal around the building.
-          </p>
+          <h1>What's <em>Blocking</em> Mobile Signal in Your Office?</h1>
+          <p class="hero-sub">Get the free UCtel checklist and find out in minutes &mdash; no engineer, no guesswork.</p>
 
-          <div class="hero-highlight">
-            <strong>What you get</strong>
-            <p>
-              A simple checklist you can use straight away to review your office, spot likely signal blockers, and understand whether the problem is minor or worth fixing properly.
-            </p>
-          </div>
-
-          <div class="hero-points">
-            <div class="hero-point">
-              <strong>Clear checks you can actually use</strong>
-              <span>Walk through the office and quickly see what might be hurting signal quality.</span>
+          <form id="lead-form" class="hero-form" novalidate>
+            <div class="form-row">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your work email"
+                autocomplete="email"
+                required
+                aria-label="Work email address"
+              />
+              <button type="submit" class="cta-button">Get the Checklist</button>
             </div>
-            <div class="hero-point">
-              <strong>Built around real office problems</strong>
-              <span>Covers dead spots, construction materials, layout issues, and common staff workarounds.</span>
-            </div>
-            <div class="hero-point">
-              <strong>Helps you decide what to do next</strong>
-              <span>Know whether to monitor the issue, test a quick win, or look at a proper fix.</span>
-            </div>
-          </div>
-        </div>
-
-        <section class="lead-card" aria-labelledby="lead-form-title">
-          <div class="lead-card-header">
-            <h2 id="lead-form-title">Send me the checklist</h2>
-            <p>
-              Enter your work email and get instant access to the office signal checklist.
-            </p>
-          </div>
-
-          <form id="lead-form" class="lead-form" novalidate>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
-
             <label class="consent-row" for="consent">
               <input id="consent" name="consent" type="checkbox" required />
               <span>I agree to receive the checklist and useful follow-up from UCtel about improving office mobile signal.</span>
             </label>
-
-            <button type="submit" class="cta-button">Get the checklist</button>
             <p id="form-message" class="form-message" aria-live="polite"></p>
           </form>
 
-          <div id="download-panel" class="download-panel" hidden>
-            <div class="download-icon">LIST</div>
-            <h3>Your checklist is ready</h3>
-            <p>Open the checklist now or download it to share with your team.</p>
-            <div class="download-actions">
-              <a class="download-button" href="./uctel-signal-checklist-branded.pdf" download>Download checklist</a>
-              <a class="secondary-link" href="./uctel-signal-checklist-branded.pdf" target="_blank" rel="noreferrer">Open checklist</a>
-            </div>
+          <div class="trust-row">
+            <span class="trust-item">&#10003; Free</span>
+            <span class="trust-item">&#128274; Secure</span>
+            <span class="trust-item">&#9889; Instant access</span>
           </div>
-        </section>
-      </section>
 
-      <section class="discover-section">
-        <div class="section-header">
-          <p class="section-kicker">What is inside</p>
-          <h2>What the checklist helps you understand</h2>
-        </div>
-
-        <div class="discover-grid">
-          <article class="discover-card">
-            <div class="card-icon teal">01</div>
-            <h3>What could be causing the issue</h3>
-            <p>See whether walls, glazing, floor layout, or building materials are likely to be weakening mobile signal.</p>
-          </article>
-
-          <article class="discover-card">
-            <div class="card-icon orange">02</div>
-            <h3>How it affects your team day to day</h3>
-            <p>Spot the hidden friction like dropped calls, poor call quality, moving to windows, or leaving desks to get signal.</p>
-          </article>
-
-          <article class="discover-card">
-            <div class="card-icon slate">03</div>
-            <h3>What to do after you review it</h3>
-            <p>Use the checklist to decide whether your issue is manageable, getting worse, or ready for a proper solution.</p>
-          </article>
         </div>
       </section>
 
-      <section class="value-section">
-        <div class="section-header">
-          <p class="section-kicker">Why people download it</p>
+      <!-- Download panel — revealed after submit -->
+      <div id="download-panel" class="download-panel" hidden>
+        <div class="page-wrap download-inner">
+          <div class="download-check">&#10003;</div>
+          <h3>Your checklist is ready</h3>
+          <p>Open it now or download to share with your team.</p>
+          <div class="download-actions">
+            <a class="download-button" href="./uctel-signal-checklist-branded.pdf" download>Download checklist</a>
+            <a class="secondary-link" href="./uctel-signal-checklist-branded.pdf" target="_blank" rel="noreferrer">Open in browser</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- What's inside -->
+      <section class="inside-section">
+        <div class="page-wrap">
+          <div class="section-header">
+            <span class="section-kicker">What's inside</span>
+            <h2>Three things the checklist reveals</h2>
+          </div>
+
+          <div class="inside-grid">
+            <article class="inside-card">
+              <div class="inside-num teal">01</div>
+              <h3>What's causing the problem</h3>
+              <p>Walls, glazing, floor layout &mdash; see which building materials and design choices are most likely blocking your signal.</p>
+            </article>
+
+            <article class="inside-card">
+              <div class="inside-num orange">02</div>
+              <h3>How it's affecting your team</h3>
+              <p>Dropped calls, people moving to windows, desk-avoidance &mdash; spot the hidden friction costing you every single day.</p>
+            </article>
+
+            <article class="inside-card">
+              <div class="inside-num slate">03</div>
+              <h3>What to do about it</h3>
+              <p>Know whether to monitor, try a quick fix, or look at a proper solution &mdash; with the confidence to actually act.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clarity -->
+      <section class="clarity-section">
+        <div class="page-wrap clarity-inner">
+          <span class="section-kicker light">Why people download it</span>
           <h2>Before you spend money, get clarity first</h2>
-        </div>
-        <div class="value-panel">
-          <p>
-            Most offices do not need more guesswork. They need a quick way to understand whether poor signal is coming from the building, the layout, or the way the team is forced to work around the problem.
-          </p>
-          <p>
-            This checklist gives you that first layer of clarity so you can make a better decision about what happens next.
-          </p>
+          <p>Most offices don't need more guesswork. They need a quick, structured way to understand <strong>why</strong> signal is poor &mdash; whether it's the building, the layout, or the way the team has learned to work around the problem.</p>
+          <p>This checklist gives you that first layer of clarity so you can make a smarter decision about what happens next.</p>
+          <a href="#lead-form" class="cta-button cta-outline">Get the free checklist</a>
         </div>
       </section>
 
+      <!-- Testimonial -->
       <section class="testimonial-section">
-        <blockquote>
-          “The checklist made it obvious why our office had certain dead spots. It gave us a much clearer starting point instead of guessing.”
-        </blockquote>
-        <p class="testimonial-meta">Operations Manager, London office</p>
+        <div class="page-wrap">
+          <div class="testimonial-card">
+            <div class="quote-mark">&#8220;</div>
+            <blockquote>The checklist made it obvious why our office had certain dead spots. It gave us a much clearer starting point instead of guessing.</blockquote>
+            <p class="testimonial-meta">&mdash; Operations Manager, London office</p>
+          </div>
+        </div>
       </section>
 
       <footer class="page-footer">
         <img src="./uctel_logo.png" alt="UCtel" class="footer-logo" />
-        <p>Powered by UCtel • 200+ successful installations across the UK</p>
+        <p>&copy; 2026 UCtel &middot; 200+ successful installations across the UK</p>
       </footer>
+
     </main>
 
     <script src="./script.js"></script>
