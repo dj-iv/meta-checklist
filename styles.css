@@ -47,81 +47,82 @@ h1, h2, h3, p, blockquote {
 
 /* ── Site header ─────────────────────────── */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(10, 28, 42, 0.97);
-  backdrop-filter: blur(10px);
-  padding: 10px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 14px 20px;
   display: flex;
   align-items: center;
 }
 
 .site-logo {
-  height: 30px;
+  height: 28px;
   width: auto;
 }
 
 /* ── Hero section ────────────────────────── */
 .hero-section {
-  background: linear-gradient(155deg, #0e2435 0%, #14303f 55%, #183544 100%);
-  padding: 28px 0 32px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 65% 55% at 85% -15%, rgba(29, 136, 154, 0.38), transparent),
-    radial-gradient(ellipse 50% 45% at -5% 110%, rgba(225, 133, 69, 0.22), transparent);
-  pointer-events: none;
-}
-
-.eyebrow-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  margin-bottom: 16px;
-}
-
-.eyebrow-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--terracotta);
-  flex-shrink: 0;
+  background: #fdfaf7;
+  padding: 40px 0 52px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 h1 {
-  font-size: clamp(1.75rem, 6.5vw, 3rem);
-  line-height: 1.06;
+  font-size: clamp(1.9rem, 6.5vw, 3rem);
+  line-height: 1.1;
   letter-spacing: -0.03em;
-  color: #ffffff;
+  color: var(--charcoal);
+  margin-bottom: 28px;
+}
+
+.narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.narrative p {
+  font-size: 1.1rem;
+  line-height: 1.72;
+  color: var(--dark-gray);
+}
+
+.narrative p strong {
+  color: var(--charcoal);
+  font-weight: 700;
+}
+
+.form-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px 24px;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  box-shadow: 0 4px 32px -8px rgba(55, 101, 129, 0.12);
+}
+
+.form-card h2 {
+  font-size: 1.4rem;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+}
+
+.form-card-desc {
+  color: var(--dark-gray);
+  font-size: 0.97rem;
+  line-height: 1.55;
   margin-bottom: 14px;
 }
 
-h1 em {
-  font-style: normal;
-  color: var(--terracotta);
-}
-
-.hero-sub {
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.72);
-  line-height: 1.55;
-  margin-bottom: 24px;
-  max-width: 480px;
+.proof-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: rgba(29, 136, 154, 0.08);
+  color: var(--teal);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 /* ── Hero form ───────────────────────────── */
@@ -131,42 +132,37 @@ h1 em {
   gap: 10px;
 }
 
-.form-row {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
 .hero-form input[type="email"] {
   width: 100%;
   padding: 15px 18px;
-  border: 2px solid rgba(255, 255, 255, 0.14);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.07);
-  color: #ffffff;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--charcoal);
   font: inherit;
   font-size: 1rem;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .hero-form input[type="email"]::placeholder {
-  color: rgba(255, 255, 255, 0.38);
+  color: var(--light-gray);
 }
 
 .hero-form input[type="email"]:focus {
   outline: none;
-  border-color: var(--turquoise);
-  background: rgba(255, 255, 255, 0.11);
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(29, 136, 154, 0.12);
 }
 
 .cta-button {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   min-height: 52px;
   padding: 13px 22px;
   border: 0;
-  border-radius: 14px;
+  border-radius: 12px;
   background: var(--terracotta);
   color: #ffffff;
   font: inherit;
@@ -175,7 +171,7 @@ h1 em {
   text-decoration: none;
   cursor: pointer;
   transition: transform 0.17s ease, background-color 0.17s ease, box-shadow 0.17s ease;
-  box-shadow: 0 8px 24px -6px rgba(225, 133, 69, 0.6);
+  box-shadow: 0 8px 24px -6px rgba(225, 133, 69, 0.5);
   letter-spacing: 0.01em;
 }
 
@@ -194,7 +190,7 @@ h1 em {
   grid-template-columns: 18px 1fr;
   gap: 10px;
   align-items: start;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--dark-gray);
   font-size: 0.8rem;
   line-height: 1.5;
   cursor: pointer;
@@ -209,28 +205,15 @@ h1 em {
 .form-message {
   min-height: 18px;
   font-size: 0.87rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--dark-gray);
 }
 
 .form-message.error {
-  color: #ff8f8b;
+  color: #c0392b;
 }
 
 .form-message.success {
-  color: var(--turquoise);
-}
-
-.trust-row {
-  display: flex;
-  gap: 18px;
-  margin-top: 16px;
-  flex-wrap: wrap;
-}
-
-.trust-item {
-  color: rgba(255, 255, 255, 0.38);
-  font-size: 0.8rem;
-  font-weight: 500;
+  color: var(--teal);
 }
 
 /* ── Download panel ──────────────────────── */
@@ -427,6 +410,8 @@ h1 em {
 }
 
 .cta-outline {
+  display: inline-flex;
+  width: auto;
   margin-top: 8px;
   border: 2px solid rgba(255, 255, 255, 0.22);
   background: rgba(255, 255, 255, 0.08);
@@ -499,20 +484,6 @@ blockquote {
 
 /* ── Desktop ─────────────────────────────── */
 @media (min-width: 640px) {
-  .form-row {
-    flex-direction: row;
-  }
-
-  .form-row input[type="email"] {
-    flex: 1;
-    border-radius: 14px 0 0 14px;
-  }
-
-  .form-row .cta-button {
-    border-radius: 0 14px 14px 0;
-    white-space: nowrap;
-  }
-
   .inside-grid {
     grid-template-columns: repeat(3, 1fr);
   }
