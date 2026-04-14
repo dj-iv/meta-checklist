@@ -31,8 +31,25 @@ leadForm?.addEventListener('submit', (event) => {
     return;
   }
 
-  formMessage.textContent = `Checklist ready for ${email}.`;
-  formMessage.className = 'form-message success';
-  downloadPanel.hidden = false;
-  downloadPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  // Disable button to prevent double-submit
+  const submitBtn = leadForm.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  fetch('https://services.leadconnectorhq.com/hooks/u7joybjA2VMQkCBcNPYb/webhook-trigger/49db6ae2-342d-4243-acd2-298f628d803a', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, source: 'office-signal-checklist' }),
+  })
+    .catch(() => {
+      // Silently continue — don't block the user from getting the checklist
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send me the checklist';
+      formMessage.textContent = `Checklist ready for ${email}.`;
+      formMessage.className = 'form-message success';
+      downloadPanel.hidden = false;
+      downloadPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
 });
